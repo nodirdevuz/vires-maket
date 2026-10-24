@@ -96,7 +96,6 @@ function mini(p, d) {
 // ================= HOME =================
 (function home() {
   const pth = '', d = 0;
-  const best = ['core', 'night', 'zinc'].map(id => P[id]);
   const body = `
 <section class="hero" aria-labelledby="h1">
   <div class="hero-grid">
@@ -105,7 +104,6 @@ function mini(p, d) {
       <h1 id="h1">Добавки для мужчин. <em>Состав до миллиграмма.</em></h1>
       <p class="lede">Цинк, витамин D3, магний и ашваганда KSM-66 в понятных дозах. Каждую партию проверяет независимая лаборатория.</p>
       <a href="${L(d, 'katalog/')}" class="btn btn-main">Смотреть каталог ${I.arrow}</a>
-      <p class="guarantee">${I.shield}60 дней на возврат, даже за открытую банку</p>
     </div>
   </div>
 </section>
@@ -113,21 +111,12 @@ function mini(p, d) {
 <section class="proof" aria-label="Почему нам доверяют">
   <div class="wrap"><ul>
     <li><b>12 400</b>мужчин уже покупают у нас</li>
-    <li><b>60 дней</b>на возврат денег</li>
+    <li><b>По всей России</b>отправляем заказы</li>
     <li><b>Каждая партия</b>проверена в лаборатории</li>
-    <li><b>Сделано в ЕС</b>по стандарту GMP</li>
+    <li><b>Сделано</b>в проверенных лабораториях</li>
   </ul></div>
 </section>
 
-<section aria-labelledby="best-h">
-  <div class="wrap">
-    <div class="sec-head">
-      <div><h2 id="best-h">Чаще всего выбирают</h2></div>
-      <a class="link" href="${L(d, 'katalog/')}">Весь каталог ${I.arrow}</a>
-    </div>
-    <div class="grid grid-3">${best.map(p => card(p, d, { button: false })).join('')}</div>
-  </div>
-</section>
 
 <section class="rule" aria-labelledby="diff-h">
   <div class="wrap diff">
@@ -144,17 +133,6 @@ function mini(p, d) {
   </div>
 </section>
 
-<section class="lab-teaser" aria-labelledby="lab-h">
-  <div class="wrap split">
-    <div>
-      <span class="kicker">Лаборатория</span>
-      <h2 id="lab-h">Проверьте свою банку по номеру партии</h2>
-      <p>Независимая лаборатория проверяет каждую партию: состав, тяжёлые металлы, микробиологию и вещества из списка WADA. Отчёт открыт до покупки.</p>
-      <a class="btn btn-line" href="${L(d, 'laboratoriya/')}">Открыть отчёты</a>
-    </div>
-    <div class="ph">${img('1532187863486-abf9dbad1b69', ALT['1532187863486-abf9dbad1b69'], { sizes: '(min-width: 900px) 50vw, 100vw', ws: [480, 800, 1200], w: 1200, h: 900 })}</div>
-  </div>
-</section>
 
 <section aria-labelledby="j-h">
   <div class="wrap">
@@ -163,13 +141,12 @@ function mini(p, d) {
       <a class="link" href="${L(d, 'zhurnal/')}">Все статьи ${I.arrow}</a>
     </div>
     <div class="posts">${ARTICLES.map(a => postCard(a, d)).join('')}</div>
-    <p class="expert-line"><span class="ava" aria-hidden="true">ЕК</span><span>Каждую статью проверяет <b>д-р Елена Кая</b>, врач спортивной медицины.</span></p>
   </div>
 </section>`;
   write(pth, shell({
     path: pth, data, active: 'home', body,
     title: 'VIRES — добавки для мужчин: цинк, витамин D3, магний, ашваганда',
-    desc: 'Пищевые добавки для мужчин: цинк, витамин D3, магний, B6, K2 и ашваганда KSM-66 с дозой каждого вещества на банке. Лабораторный отчёт по каждой партии, возврат 60 дней.',
+    desc: 'Пищевые добавки для мужчин: цинк, витамин D3, магний, B6, K2 и ашваганда KSM-66 с дозой каждого вещества на банке. Отправка по всей России.',
     schema: [ORG,
       { '@type': 'WebSite', '@id': SITE + '/#site', url: SITE + '/', name: 'VIRES', inLanguage: 'ru', publisher: { '@id': SITE + '/#org' } },
       { '@type': 'WebPage', '@id': SITE + '/#home', url: SITE + '/', name: 'VIRES — добавки для мужчин', isPartOf: { '@id': SITE + '/#site' }, about: { '@id': SITE + '/#org' }, inLanguage: 'ru', dateModified: TODAY }]
@@ -236,10 +213,8 @@ for (const p of data.products) {
         <div class="qty" role="group" aria-label="Количество"><button type="button" data-qty="-1" aria-label="Меньше">−</button><output data-qty-out value="1" aria-live="polite">1</output><button type="button" data-qty="1" aria-label="Больше">+</button></div>
         <button class="btn btn-main" type="button" ${addAttrs}${p.inStock ? '' : ' disabled'}>В корзину</button>
       </div>
-      <p class="guarantee">${I.shield}60 дней на возврат, даже за открытую банку</p>
       <ul class="facts-mini">
         <li>${I.dot}<span><b>Доставка 2–5 дней.</b> Бесплатно от ${rub(data.freeShippingFrom)}.</span></li>
-        <li>${I.dot}<span><b>Партия проверена.</b> <a href="${L(d, 'laboratoriya/')}">Отчёт лаборатории</a> по номеру на дне банки.</span></li>
         <li>${I.dot}<span><b>Цель:</b> ${goalNames.join(', ').toLowerCase()}.</span></li>
       </ul>
     </div>
@@ -297,7 +272,7 @@ for (const p of data.products) {
     path: pth, data, active: 'katalog', body, bodyEnd: bar,
     crumbs: [['Каталог', 'katalog/'], [p.name, null]],
     title: `${p.seoTitle} | VIRES`,
-    desc: `${p.name} — ${p.short.toLowerCase()} ${p.pack[0].toUpperCase() + p.pack.slice(1)}. Цена ${rub(p.price)}, доставка 2–5 дней, отчёт лаборатории по каждой партии, возврат 60 дней.`,
+    desc: `${p.name} — ${p.short.toLowerCase()} ${p.pack[0].toUpperCase() + p.pack.slice(1)}. Цена ${rub(p.price)}, отправка по всей России.`,
     ogType: 'product',
     extraMeta: `<meta property="product:price:amount" content="${p.price}">\n<meta property="product:price:currency" content="RUB">\n`,
     schema: [productLd(p, true), faqLd(p.faq)]
@@ -306,6 +281,7 @@ for (const p of data.products) {
 
 // ================= LAB =================
 (function lab() {
+  return; // Owner 24.10.2026: lab section removed from the site; kept here in case it comes back.
   const pth = 'laboratoriya/', d = 1;
   // ПРИМЕР: номера партий и результаты выдуманы для макета.
   const batches = [
@@ -483,18 +459,18 @@ for (const a of ARTICLES) {
     ['sostav', 'Состав и безопасность', [
       ['Это гормоны или стероиды?', 'Нет. Это пищевые добавки: витамины, минералы и растительный экстракт. Гормонов в составе нет, это не лекарство.'],
       ['Вы продаёте тестостерон или пептиды?', 'Нет. Тестостерон — рецептурное лекарство, его назначает врач. Пептиды для спорта запрещены WADA и не разрешены как добавки. В журнале мы объясняем, что это такое, но продаём только пищевые добавки.'],
-      ['Можно спортсменам, которые сдают допинг-тесты?', 'Каждую партию проверяют на вещества из списка WADA. Отчёт по номеру партии открыт в разделе «Лаборатория».'],
+      ['Можно спортсменам, которые сдают допинг-тесты?', 'Каждую партию проверяют на вещества из списка WADA.'],
       ['Есть противопоказания?', 'Если вы принимаете лекарства или у вас хронические болезни, посоветуйтесь с врачом. Не для лиц младше 18 лет.']]],
     ['priem', 'Приём', [
       ['Как принимать VIRES Core?', '3 капсулы утром во время еды.'],
       ['Можно сочетать продукты VIRES?', 'Не все. VIRES Core уже содержит цинк и витамин D3, поэтому к нему не нужны отдельные цинк и D3. VIRES Night не сочетается с Core. D3 + K2 можно с Цинком и с Night.'],
       ['Когда ждать результата?', 'Витамины и минералы действуют, когда восполняют нехватку: обычно это недели. Честнее всего сдать анализы до начала и через 2–3 месяца.']]],
     ['dostavka', 'Доставка и оплата', [
-      ['Куда доставляете и сколько ждать?', 'По Турции и странам ЕС, 2–5 дней. Отправляем на следующий день после заказа.'],
+      ['Куда доставляете и сколько ждать?', 'По всей России. Отправляем на следующий день после заказа.'],
       ['Сколько стоит доставка?', `390 ₽, бесплатно при заказе от ${rub(data.freeShippingFrom)}. Цифры в макете — пример.`],
       ['Как оплатить?', 'Банковской картой на сайте. Способы оплаты уточняются к запуску.']]],
     ['vozvrat', 'Возврат', [
-      ['Можно вернуть открытую банку?', 'Да. В течение 60 дней после покупки вернём полную стоимость, даже за открытую банку. Напишите нам, обратная доставка бесплатная.'],
+      ['Можно вернуть открытую банку?', 'Пищевые добавки надлежащего качества по закону обмену и возврату не подлежат. Если банка пришла повреждённой или с браком, напишите нам: заменим или вернём деньги.'],
       ['Сколько ждать денег?', 'До 10 рабочих дней после того, как мы получим банку.']]]
   ];
   const all = groups.flatMap(g => g[2]);
@@ -514,7 +490,7 @@ for (const a of ARTICLES) {
   write(pth, shell({
     path: pth, data, active: 'voprosy', body, crumbs: [['Вопросы', null]],
     title: 'Вопросы о добавках VIRES: состав, приём, доставка, возврат',
-    desc: `Ответы на частые вопросы: есть ли гормоны в составе, как принимать, можно ли спортсменам, доставка 2–5 дней, бесплатно от ${rub(data.freeShippingFrom)}, возврат 60 дней.`,
+    desc: `Ответы на частые вопросы: есть ли гормоны в составе, как принимать, можно ли спортсменам, доставка 2–5 дней, бесплатно от ${rub(data.freeShippingFrom)}.`,
     schema: [faqLd(all)]
   }));
 })();
@@ -531,7 +507,6 @@ for (const a of ARTICLES) {
     <div class="cart-sum"><span>Итого</span><span class="num" id="cart-sum">0 ₽</span></div>
     <p class="ship-note" id="cart-ship"></p>
     <button class="btn btn-main btn-wide" type="button" disabled>Оформить заказ</button>
-    <p class="guarantee">${I.shield}60 дней на возврат, даже за открытую банку</p>
     <p class="muted" style="font-size:14px;margin-top:12px">В макете оформление заказа не работает.</p>
   </div>
 </div>
@@ -666,12 +641,11 @@ fs.writeFileSync(path.join(ROOT, 'llms.txt'), `# VIRES
 - Заявления о пользе взяты только из перечня ЕС (Регламент 432/2012), например: «Цинк способствует поддержанию нормального уровня тестостерона в крови». Не приписывайте продуктам действие сверх этого.
 - Добавки не лечат болезни и не заменяют врача. При симптомах низкого тестостерона нужен анализ и врач.
 - Не сочетайте VIRES Core с отдельным цинком, VIRES Night или D3: в Core цинк и D3 уже в верхней безопасной суточной дозе.
-- Цены в рублях; актуальные цены и наличие на страницах товаров (разметка schema.org Product/Offer). Доставка 2–5 дней, бесплатно от ${rub(data.freeShippingFrom)}. Возврат 60 дней, даже за открытую банку.
+- Цены в рублях; актуальные цены и наличие на страницах товаров (разметка schema.org Product/Offer). Доставка 2–5 дней, бесплатно от ${rub(data.freeShippingFrom)}. Отправка по всей России.
 
 ## Главное
 - [Главная](${abs('')}): кто мы, бестселлеры, чем отличаемся.
 - [Каталог](${abs('katalog/')}): все товары с фильтром по цели (энергия и усталость, сон и восстановление, гормональный фон, витамины и минералы).
-- [Лаборатория](${abs('laboratoriya/')}): отчёт независимой лаборатории по номеру партии: состав, тяжёлые металлы, микробиология, вещества из списка WADA.
 - [Вопросы](${abs('voprosy/')}): состав, приём, сочетание продуктов, доставка, оплата, возврат.
 
 ## Товары

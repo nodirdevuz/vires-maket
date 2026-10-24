@@ -50,7 +50,6 @@ export const I = {
 
 export const NAV = [
   ['katalog', 'katalog/', 'Каталог'],
-  ['laboratoriya', 'laboratoriya/', 'Лаборатория'],
   ['zhurnal', 'zhurnal/', 'Журнал'],
   ['voprosy', 'voprosy/', 'Вопросы']
 ];
@@ -74,7 +73,7 @@ export function header(d, active) {
       <nav class="menu-panel" aria-label="Меню">
         <a href="${L(d, '')}"${active === 'home' ? ' aria-current="page"' : ''}>Главная</a>
         ${links.replace(/<a ([^>]*)>([^<]*)<\/a>/g, `<a $1>$2 ${I.arrow}</a>`)}
-        <p>Доставка 2–5 дней. Возврат 60 дней.</p>
+        <p>Отправка по всей России.</p>
       </nav>
     </details>
   </div>
@@ -104,14 +103,14 @@ export function footer(d, data) {
     <div class="foot-grid">
       <div>
         <a href="${L(d, '')}" class="logo" aria-label="VIRES, на главную">${I.logo}VIRES</a>
-        <p style="margin-top:12px">Пищевые добавки для мужчин. Состав до миллиграмма, отчёт лаборатории по каждой партии.</p>
+        <p style="margin-top:12px">Пищевые добавки для мужчин. Состав до миллиграмма. Отправка по всей России.</p>
       </div>
       <nav aria-label="Каталог"><h2>Каталог</h2><ul>
         ${data.products.map(p => `<li><a href="${L(d, 'katalog/' + p.slug + '/')}">${p.name}</a></li>`).join('')}</ul></nav>
       <nav aria-label="Журнал"><h2>Журнал</h2><ul>
         <li><a href="${L(d, 'zhurnal/#testosteron')}">Тестостерон</a></li><li><a href="${L(d, 'zhurnal/#vitaminy')}">Витамины и минералы</a></li><li><a href="${L(d, 'zhurnal/#vosstanovlenie')}">Восстановление</a></li><li><a href="${L(d, 'zhurnal/#peptidy')}">Пептиды и спорт</a></li></ul></nav>
       <nav aria-label="Покупателям"><h2>Покупателям</h2><ul>
-        <li><a href="${L(d, 'voprosy/#dostavka')}">Доставка и оплата</a></li><li><a href="${L(d, 'voprosy/#vozvrat')}">Возврат 60 дней</a></li><li><a href="${L(d, 'laboratoriya/')}">Проверить партию</a></li><li><a href="${L(d, 'llms.txt')}">Для ИИ-ассистентов</a></li></ul></nav>
+        <li><a href="${L(d, 'voprosy/#dostavka')}">Доставка и оплата</a></li><li><a href="${L(d, 'voprosy/#vozvrat')}">Возврат</a></li><li><a href="${L(d, 'llms.txt')}">Для ИИ-ассистентов</a></li></ul></nav>
     </div>
     <p class="disclaimer">Пищевая добавка. Не является лекарственным средством. Не заменяет полноценное и разнообразное питание и здоровый образ жизни. Не превышайте рекомендуемую суточную дозу. Хранить в недоступном для детей месте. При беременности, хронических заболеваниях или приёме лекарств перед применением проконсультируйтесь с врачом. Не для лиц младше 18 лет. Информация на сайте не является медицинской консультацией.</p>
     <div class="foot-bottom"><span>© 2026 VIRES</span><span>hello@vires.example</span></div>
