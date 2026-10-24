@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- На боевом сайте файл собирается сервером сам: новый товар или статья попадают сюда сразу после публикации. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://vires.example/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://vires.example/katalog/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://vires.example/katalog/vires-core/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://vires.example/katalog/vires-night/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://vires.example/katalog/vires-cink-25/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://vires.example/katalog/vires-d3-k2/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://vires.example/laboratoriya/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://vires.example/zhurnal/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://vires.example/zhurnal/kak-povysit-testosteron/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://vires.example/zhurnal/cink-i-testosteron/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://vires.example/zhurnal/peptidy-v-sporte/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://vires.example/voprosy/</loc><lastmod>2026-10-24</lastmod></url>
+</urlset>

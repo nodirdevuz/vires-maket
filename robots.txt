@@ -1,0 +1,60 @@
+# VIRES robots.txt (домен vires.example заменить на настоящий)
+User-agent: *
+Allow: /
+Disallow: /korzina/
+Disallow: /admin/
+Disallow: /checkout/
+
+# Поисковые системы
+User-agent: Googlebot
+Allow: /
+Disallow: /korzina/
+Disallow: /admin/
+
+User-agent: Yandex
+Allow: /
+Disallow: /korzina/
+Disallow: /admin/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&yclid&gclid
+Clean-param: cel /katalog/
+
+User-agent: YandexBot
+Allow: /
+Disallow: /korzina/
+Disallow: /admin/
+
+User-agent: Bingbot
+Allow: /
+
+# ИИ-поиск и ИИ-ассистенты: разрешены, чтобы они читали каталог и журнал и ссылались на нас
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://vires.example/sitemap.xml

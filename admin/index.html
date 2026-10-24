@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Админка: товары | VIRES</title>
+<meta name="description" content="Админка">
+<meta name="robots" content="noindex, nofollow">
+<!-- Подтверждение прав в Яндекс.Вебмастере и Google Search Console: вставить коды при запуске.
+     Регион сайта (Россия / города доставки) задаётся в Яндекс.Вебмастере: «Информация о сайте» → «Региональность». -->
+<meta name="yandex-verification" content="ЗАМЕНИТЬ_КОД_ЯНДЕКС">
+<meta name="google-site-verification" content="ЗАМЕНИТЬ_КОД_GOOGLE">
+<meta name="theme-color" content="#0b0b0c">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VIRES">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Админка: товары">
+<meta property="og:description" content="Админка">
+<meta property="og:url" content="https://vires.example/admin/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=1200&h=630&q=60&auto=format&fit=crop">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="text/plain" title="Карта сайта для ИИ-ассистентов" href="../llms.txt">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' fill='%230b0b0c'/%3E%3Cpath d='M10 3 17 10 10 17 3 10Z' fill='%23c99a63'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+
+</head>
+<body>
+<div class="demo-note" role="note">МАКЕТ · ЦЕНЫ, ЦИФРЫ И ОТЗЫВЫ — ПРИМЕР</div>
+<a class="skip" href="#main">К содержанию</a>
+<header class="site-head">
+  <div class="wrap">
+    <a href="../index.html" class="logo" aria-label="VIRES, на главную"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 19 10 10 19 1 10Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 6 14 10 10 14 6 10Z" fill="currentColor"/></svg>VIRES</a>
+    <nav class="nav" aria-label="Главное меню">
+      <a href="../katalog/index.html">Каталог</a>
+      <a href="../laboratoriya/index.html">Лаборатория</a>
+      <a href="../zhurnal/index.html">Журнал</a>
+      <a href="../voprosy/index.html">Вопросы</a>
+    </nav>
+    <a class="icon-btn" href="../korzina/index.html" aria-label="Корзина, товаров: 0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 7h14l-1.4 11.2a2 2 0 0 1-2 1.8H8.4a2 2 0 0 1-2-1.8L5 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg><span class="cart-count" data-cart-count data-zero>0</span></a>
+    <details class="menu">
+      <summary class="icon-btn" aria-label="Меню"><svg class="i-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="i-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></summary>
+      <nav class="menu-panel" aria-label="Меню">
+        <a href="../index.html">Главная</a>
+        <a href="../katalog/index.html">Каталог <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="../laboratoriya/index.html">Лаборатория <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="../zhurnal/index.html">Журнал <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="../voprosy/index.html">Вопросы <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p>Доставка 2–5 дней. Возврат 60 дней.</p>
+      </nav>
+    </details>
+  </div>
+</header>
+<main id="main">
+
+
+<div class="wrap adm">
+  <div class="adm-top"><h1>Товары</h1><a class="btn btn-main" href="#novyi">Добавить товар</a></div>
+  <p class="muted" style="margin-bottom:20px">Макет админки. Цену и наличие можно менять прямо в таблице. В макете ничего не сохраняется.</p>
+  <form data-adm-save>
+  <div class="adm-table"><table>
+    <thead><tr><th scope="col">Товар</th><th scope="col">Цель</th><th scope="col">Цена, ₽</th><th scope="col">Старая цена</th><th scope="col">В наличии</th><th scope="col"><span class="sr">Действия</span></th></tr></thead>
+    <tbody><tr>
+      <td><b>VIRES Core</b><small>VR-CORE-30 · 90 капсул, на 30 дней</small></td>
+      <td>Энергия и усталость, Гормональный фон, Витамины и минералы</td>
+      <td><label class="sr" for="pr-core">Цена VIRES Core</label><input class="inp inp-price" id="pr-core" type="number" inputmode="numeric" min="0" step="10" value="2990"></td>
+      <td><label class="sr" for="op-core">Старая цена VIRES Core</label><input class="inp inp-price" id="op-core" type="number" inputmode="numeric" min="0" step="10" value="" placeholder="нет"></td>
+      <td><label class="switch"><input type="checkbox" checked> <span>Да</span></label></td>
+      <td><a class="link" href="../katalog/vires-core/index.html">Открыть</a></td></tr><tr>
+      <td><b>VIRES Night</b><small>VR-NIGHT-30 · 60 капсул, на 30 дней</small></td>
+      <td>Сон и восстановление, Энергия и усталость</td>
+      <td><label class="sr" for="pr-night">Цена VIRES Night</label><input class="inp inp-price" id="pr-night" type="number" inputmode="numeric" min="0" step="10" value="2290"></td>
+      <td><label class="sr" for="op-night">Старая цена VIRES Night</label><input class="inp inp-price" id="op-night" type="number" inputmode="numeric" min="0" step="10" value="" placeholder="нет"></td>
+      <td><label class="switch"><input type="checkbox" checked> <span>Да</span></label></td>
+      <td><a class="link" href="../katalog/vires-night/index.html">Открыть</a></td></tr><tr>
+      <td><b>VIRES Цинк 25 мг</b><small>VR-ZN-90 · 90 капсул, на 90 дней</small></td>
+      <td>Гормональный фон, Витамины и минералы</td>
+      <td><label class="sr" for="pr-zinc">Цена VIRES Цинк 25 мг</label><input class="inp inp-price" id="pr-zinc" type="number" inputmode="numeric" min="0" step="10" value="1090"></td>
+      <td><label class="sr" for="op-zinc">Старая цена VIRES Цинк 25 мг</label><input class="inp inp-price" id="op-zinc" type="number" inputmode="numeric" min="0" step="10" value="" placeholder="нет"></td>
+      <td><label class="switch"><input type="checkbox" checked> <span>Да</span></label></td>
+      <td><a class="link" href="../katalog/vires-cink-25/index.html">Открыть</a></td></tr><tr>
+      <td><b>VIRES D3 + K2</b><small>VR-D3K2-30ML · капли 30 мл, примерно на 4 месяца</small></td>
+      <td>Витамины и минералы, Сон и восстановление</td>
+      <td><label class="sr" for="pr-d3">Цена VIRES D3 + K2</label><input class="inp inp-price" id="pr-d3" type="number" inputmode="numeric" min="0" step="10" value="1290"></td>
+      <td><label class="sr" for="op-d3">Старая цена VIRES D3 + K2</label><input class="inp inp-price" id="op-d3" type="number" inputmode="numeric" min="0" step="10" value="" placeholder="нет"></td>
+      <td><label class="switch"><input type="checkbox" checked> <span>Да</span></label></td>
+      <td><a class="link" href="../katalog/vires-d3-k2/index.html">Открыть</a></td></tr>
+    </tbody></table></div>
+  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:16px"><button class="btn btn-line" type="submit">Сохранить цены</button><p class="adm-saved" role="status"></p></div>
+  </form>
+
+  <form class="adm-form" id="novyi" data-adm-save aria-labelledby="new-h">
+    <h2 id="new-h">Новый товар</h2>
+    <div class="two">
+      <div class="field"><label for="n-name">Название</label><input class="inp" id="n-name" placeholder="VIRES Magnesium" required><small>Начинайте с VIRES: так имя одинаковое везде.</small></div>
+      <div class="field"><label for="n-slug">Адрес страницы</label><input class="inp" id="n-slug" placeholder="vires-magnesium"><small>Латиницей, через дефис. Будет: /katalog/vires-magnesium/</small></div>
+    </div>
+    <div class="two">
+      <div class="field"><label for="n-price">Цена, ₽</label><input class="inp" id="n-price" type="number" inputmode="numeric" min="0" step="10" placeholder="1490"></div>
+      <div class="field"><label for="n-pack">Упаковка</label><input class="inp" id="n-pack" placeholder="60 капсул, на 30 дней"></div>
+    </div>
+    <fieldset class="field" style="border:0"><legend style="font-size:14px;font-weight:600;margin-bottom:8px">Цель (для фильтра каталога)</legend>
+      <div class="goals-pick"><label class="switch"><input type="checkbox" name="goal" value="energiya"> Энергия и усталость</label><label class="switch"><input type="checkbox" name="goal" value="son"> Сон и восстановление</label><label class="switch"><input type="checkbox" name="goal" value="gormony"> Гормональный фон</label><label class="switch"><input type="checkbox" name="goal" value="vitaminy"> Витамины и минералы</label></div></fieldset>
+    <div class="field"><label for="n-short">Коротко, одна строка</label><input class="inp" id="n-short" placeholder="Магний бисглицинат, 2 капсулы вечером."></div>
+    <div class="field"><label for="n-desc">Описание</label><textarea id="n-desc" placeholder="Что внутри и кому подходит. Только разрешённые заявления ЕС."></textarea><small>Нельзя: «повышает тестостерон», «лечит», «сжигает жир». Можно только формулировки из списка ЕС.</small></div>
+    <div class="field"><span>Состав на порцию</span>
+      <div class="dose-rows">
+        <div><input class="inp" aria-label="Вещество" placeholder="Магний (бисглицинат)"><input class="inp" aria-label="Доза" placeholder="300 мг"><input class="inp" aria-label="% НСП" placeholder="80%"></div>
+        <div><input class="inp" aria-label="Вещество" placeholder="Витамин B6"><input class="inp" aria-label="Доза" placeholder="2 мг"><input class="inp" aria-label="% НСП" placeholder="143%"></div>
+      </div>
+      <button class="btn btn-line" type="button" style="justify-self:start;min-height:44px">+ строка</button></div>
+    <div class="field"><label for="n-photo">Фото</label><label class="drop" for="n-photo">Перетащите фото или нажмите, чтобы выбрать.<br>Квадрат, от 1200 px, до 300 КБ.</label><input class="sr" id="n-photo" type="file" accept="image/*"></div>
+    <label class="switch"><input type="checkbox" checked> В наличии</label>
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><button class="btn btn-main" type="submit">Сохранить товар</button><p class="adm-saved" role="status"></p></div>
+  </form>
+</div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="../index.html" class="logo" aria-label="VIRES, на главную"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 1 19 10 10 19 1 10Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 6 14 10 10 14 6 10Z" fill="currentColor"/></svg>VIRES</a>
+        <p style="margin-top:12px">Пищевые добавки для мужчин. Состав до миллиграмма, отчёт лаборатории по каждой партии.</p>
+      </div>
+      <nav aria-label="Каталог"><h2>Каталог</h2><ul>
+        <li><a href="../katalog/vires-core/index.html">VIRES Core</a></li><li><a href="../katalog/vires-night/index.html">VIRES Night</a></li><li><a href="../katalog/vires-cink-25/index.html">VIRES Цинк 25 мг</a></li><li><a href="../katalog/vires-d3-k2/index.html">VIRES D3 + K2</a></li></ul></nav>
+      <nav aria-label="Журнал"><h2>Журнал</h2><ul>
+        <li><a href="../zhurnal/index.html#testosteron">Тестостерон</a></li><li><a href="../zhurnal/index.html#vitaminy">Витамины и минералы</a></li><li><a href="../zhurnal/index.html#vosstanovlenie">Восстановление</a></li><li><a href="../zhurnal/index.html#peptidy">Пептиды и спорт</a></li></ul></nav>
+      <nav aria-label="Покупателям"><h2>Покупателям</h2><ul>
+        <li><a href="../voprosy/index.html#dostavka">Доставка и оплата</a></li><li><a href="../voprosy/index.html#vozvrat">Возврат 60 дней</a></li><li><a href="../laboratoriya/index.html">Проверить партию</a></li><li><a href="../llms.txt">Для ИИ-ассистентов</a></li></ul></nav>
+    </div>
+    <p class="disclaimer">Пищевая добавка. Не является лекарственным средством. Не заменяет полноценное и разнообразное питание и здоровый образ жизни. Не превышайте рекомендуемую суточную дозу. Хранить в недоступном для детей месте. При беременности, хронических заболеваниях или приёме лекарств перед применением проконсультируйтесь с врачом. Не для лиц младше 18 лет. Информация на сайте не является медицинской консультацией.</p>
+    <div class="foot-bottom"><span>© 2026 VIRES</span><span>hello@vires.example</span></div>
+  </div>
+</footer>
+
+<script src="../site.js" defer></script>
+</body>
+</html>
